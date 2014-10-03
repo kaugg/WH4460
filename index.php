@@ -13,10 +13,20 @@
   <script src="maps/jquery-jvectormap-world-mill-en.js"></script>
 	
 	
+	
+	
 	  <script>
+	  
+	  function go(event,code)
+	  {
+		alert(code);
+	  }
+	  
+	  
 				$(function(){
 				  $('#world-map').vectorMap({
 						backgroundColor : "f1f1f1",
+						onRegionClick : go,
 						regionStyle : {
 											initial : {fill:"#a0a0a0"}
 										},
@@ -117,6 +127,7 @@
 							<li><a data-toggle="tab" href="#dropdown2">Line Chart</a></li>
 						</ul>
 					</li>
+					<li><a data-toggle="tab" href="#sectionD">Raw Data</a></li>
 				</ul>
 				<div class="tab-content" style="padding-bottom: 30px;">
 					<div id="sectionA" class="tab-pane fade in active">
@@ -125,6 +136,10 @@
 					</div>
 					<div id="sectionB" class="tab-pane fade">
 						<h3>Scatterplot</h3>
+						<p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+					</div>
+					<div id="sectionD" class="tab-pane fade">
+						<h3>Raw Data</h3>
 						<p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
 					</div>
 					<div id="dropdown1" class="tab-pane fade">
