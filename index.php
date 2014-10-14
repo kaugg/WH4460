@@ -17,6 +17,9 @@
 	
 	  <script>
 	  
+	  
+	
+	  
 	  function go(event,code)
 	  {
 		alert(code);
@@ -87,7 +90,7 @@
 	
 	
   </head>
-  <body>
+  <body onload="">
   
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -120,30 +123,65 @@
 				<ul class="nav nav-tabs">
 					<li class="active"><a data-toggle="tab" href="#sectionA">Line Graph</a></li>
 					<li><a data-toggle="tab" href="#sectionB">Scatterplot</a></li>
-					<li class="dropdown">
-						<a data-toggle="dropdown" class="dropdown-toggle" href="#">Country Comparisons <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a data-toggle="tab" href="#dropdown1">Pie Chart</a></li>
-							<li><a data-toggle="tab" href="#dropdown2">Line Chart</a></li>
-						</ul>
-					</li>
+					<li><a data-toggle="tab" href="#dropdown1">Pie Chart</a></li>
 					<li><a data-toggle="tab" href="#sectionD">Raw Data</a></li>
 				</ul>
 				<div class="tab-content" style="padding-bottom: 30px;">
 					<div id="sectionA" class="tab-pane fade in active">
 						<h3>Line Graph</h3>
+						<img src="images/line.png">
 						<p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
 					</div>
 					<div id="sectionB" class="tab-pane fade">
 						<h3>Scatterplot</h3>
+						<img src="images/scatter.png">
 						<p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
 					</div>
 					<div id="sectionD" class="tab-pane fade">
 						<h3>Raw Data</h3>
+						<table class="table">
+							<th>
+								<td>Country<td>
+								<td>% Change Septic<td>
+								<td>% Change Water<td>
+								<td>Rural<td>
+								<td>Urban<td>
+							</th>
+							<tr>
+								<td>1<td>
+								<td>2<td>
+								<td>3<td>
+								<td>4<td>
+								<td>5<td>
+							</tr>
+							<tr>
+								<td>1<td>
+								<td>2<td>
+								<td>3<td>
+								<td>4<td>
+								<td>5<td>
+							</tr>
+							<tr>
+								<td>1<td>
+								<td>2<td>
+								<td>3<td>
+								<td>4<td>
+								<td>5<td>
+							</tr>
+							<tr>
+								<td>1<td>
+								<td>2<td>
+								<td>3<td>
+								<td>4<td>
+								<td>5<td>
+							</tr>
+						
+						</table>
 						<p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
 					</div>
 					<div id="dropdown1" class="tab-pane fade">
 						<h3>Comparisons Pie Chart</h3>
+						<img src="images/pie.png">
 						<p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
 					</div>
 					<div id="dropdown2" class="tab-pane fade">
