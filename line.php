@@ -1,3 +1,5 @@
+<!--Nicole-->
+
 <h3>Line Graph</h3>
 
 <img src="images/line.png">

@@ -1,3 +1,5 @@
+<!--Michael-->
+
 <h3>Scatterplot</h3>
 
 <img src="images/scatter.png">
