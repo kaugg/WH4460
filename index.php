@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<script src="jquery.js"></script>
+  	<script src="libs/jquery.js"></script>
   
     <title>4460 World Health</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	
-   <link rel="stylesheet" href="maps/jquery-jvectormap-1.1.1.css" type="text/css" media="screen"/>
-  <script src="maps/jquery-jvectormap-1.1.1.min.js"></script>
-  <script src="maps/jquery-jvectormap-world-mill-en.js"></script>
-	
-	
-	
+		<link rel="stylesheet" href="maps/jquery-jvectormap-1.1.1.css" type="text/css" media="screen"/>
+		<script src="maps/jquery-jvectormap-1.1.1.min.js"></script>
+		<script src="maps/jquery-jvectormap-world-mill-en.js"></script>
 	
 	  <script>
-	  
-	  
-	
 	  
 	  function go(event,code)
 	  {
@@ -88,7 +82,6 @@
       }
     </style>
 	
-	
   </head>
   <body onload="">
   
@@ -128,66 +121,26 @@
 				</ul>
 				<div class="tab-content" style="padding-bottom: 30px;">
 					<div id="sectionA" class="tab-pane fade in active">
-						<h3>Line Graph</h3>
-						<img src="images/line.png">
-						<p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+
+						<?php include('line.php'); ?>
+						
 					</div>
 					<div id="sectionB" class="tab-pane fade">
-						<h3>Scatterplot</h3>
-						<img src="images/scatter.png">
-						<p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+					
+						<?php include('scatter.php'); ?>
+						
 					</div>
 					<div id="sectionD" class="tab-pane fade">
-						<h3>Raw Data</h3>
-						<table class="table">
-							<th>
-								<td>Country<td>
-								<td>% Change Septic<td>
-								<td>% Change Water<td>
-								<td>Rural<td>
-								<td>Urban<td>
-							</th>
-							<tr>
-								<td>1<td>
-								<td>2<td>
-								<td>3<td>
-								<td>4<td>
-								<td>5<td>
-							</tr>
-							<tr>
-								<td>1<td>
-								<td>2<td>
-								<td>3<td>
-								<td>4<td>
-								<td>5<td>
-							</tr>
-							<tr>
-								<td>1<td>
-								<td>2<td>
-								<td>3<td>
-								<td>4<td>
-								<td>5<td>
-							</tr>
-							<tr>
-								<td>1<td>
-								<td>2<td>
-								<td>3<td>
-								<td>4<td>
-								<td>5<td>
-							</tr>
-						
-						</table>
-						<p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+					
+						<?php include('raw.php'); ?>
+					
 					</div>
 					<div id="dropdown1" class="tab-pane fade">
-						<h3>Comparisons Pie Chart</h3>
-						<img src="images/pie.png">
-						<p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
+						
+						<?php include('pie.php'); ?>
+						
 					</div>
-					<div id="dropdown2" class="tab-pane fade">
-						<h3>Dropdown 2</h3>
-						<p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit. Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem. Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis dis parturient.</p>
-					</div>
+	
 				</div>
 			</div>
 		
@@ -197,9 +150,7 @@
 		     <p>....</p>
 		      
 		 </div>       	   		
-
-
-				
+		
 		 <div class="well">
      
 			 <h4>Guide to Using this Infoviz:</h4>
@@ -207,12 +158,6 @@
 		      
 		 </div>
 		 
-		 
-
-		 
-		 
-		 
-	   
         </div><!--/span-->
         <div class="span6">
 		
@@ -271,9 +216,6 @@
   
 		 </div>
 		 
-		
-
-
         </div><!--/span-->
       </div><!--/row-->
 
@@ -285,11 +227,6 @@
 
     </div><!--/.fluid-container-->
   
-
-  
-  
-
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
