@@ -2,9 +2,18 @@
 
 <h3>Comparisons Pie Chart</h3>
 
-<img src="images/pie.png">
+<!--<img src="images/pie.png">-->
+<script src="libs/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 
-<p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. 
-Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae 
-venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
-					
+
+
+
+<!--<p>
+Comparisons on counntries: 
+
+</p>-->
+<?php
+echo "Country VS Country";
+?>
+			
