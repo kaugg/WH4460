@@ -1,3 +1,5 @@
+<?php include('data_import.php'); ?>
+
 <!--Kemble-->
 <!DOCTYPE html>
 <html>
@@ -123,12 +125,12 @@
 				<div class="tab-content" style="padding-bottom: 30px;">
 					<div id="sectionA" class="tab-pane fade in active">
 
-						<?php include('line.php'); ?>
+						<?php //include('line.php'); ?>
 						
 					</div>
 					<div id="sectionB" class="tab-pane fade">
 					
-						<?php include('scatter.php'); ?>
+						<?php //include('scatter.php'); ?>
 						
 					</div>
 					<div id="sectionD" class="tab-pane fade">
@@ -138,7 +140,7 @@
 					</div>
 					<div id="dropdown1" class="tab-pane fade">
 						
-						<?php include('pie.php'); ?>
+						<?php //include('pie.php'); ?>
 						
 					</div>
 	
