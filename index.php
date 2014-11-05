@@ -154,7 +154,43 @@
 		
 		<div class="span6">
 		<div class="well">
-			 Welcome to the World Health infoviz.
+			 Welcome to the World Health infoviz. Filter results using the dropdowns below:<br>
+			 
+			 <select>
+			    <option>Year:</option>
+				<option>1990</option>
+				<option>1995</option>
+				<option>2000</option>
+				<option>2005</option>
+				<option>2010</option>
+			 </select>
+			 
+			 <select>
+			    <option>Area Type:</option>
+				<option>Total</option>
+				<option>Urban</option>
+				<option>Rural</option>
+			 </select>
+			 
+			  <select>
+				<option>Health Type:</option>
+				<option>Water</option>
+				<option>Sanitation</option>
+			 </select>
+			 
+			 <select>
+				<option>Population Portion:*</option>
+				<option>0-25%</option>
+				<option>25-50%</option>
+				<option>50-75%</option>
+				<option>75-100%</option>
+			 </select>
+			 
+			  <select>
+				<option>Country:</option>
+				
+			 </select>
+			 
 		 </div>
 		
 			<div class="bs-example">

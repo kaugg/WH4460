@@ -8,6 +8,15 @@ $csv = array_map('str_getcsv', file('data.csv'));
 $html_data = '';
 $data = array();
 
+// FILTERS: only one filter at a time for now
+$f_country		= 'Angola';		// ... 
+$f_year			= null;		// 1990, 1995, 2000, 2005, 2010
+$f_area_type	= null;		// Total, Rural, Urban
+$f_health_type 	= null; 	// SANITATION, WATER
+
+$f_min_value = 60;  // default 0
+$f_max_value = 78; // default 101
+
 for($i=1; $i < count($csv); $i++)
 {
 	$line = $csv[$i];
@@ -27,13 +36,24 @@ for($i=1; $i < count($csv); $i++)
 		$health_type = 'WATER';
 	}
 	
-	$html_data .= "<tr>
-		<td>$country</td>
-	    <td>$year</td>
-		<td>$area_type</td>
-		<td>$health_type</td>
-		<td>$value %</td>
-	</tr>";
+	// THIS FILTERS THE DATA IN THE TABLE
+	if	(
+			(($year == $f_year) || ($f_year == null)) &&
+			(($area_type == $f_area_type) || ($f_area_type == null)) &&
+			(($health_type == $f_health_type) || ($f_health_type == null))  &&
+			(($country == $f_country) || ($f_country == null))  &&
+			( $f_min_value < $value ) &&
+			( $f_max_value > $value )
+		)
+	{
+		$html_data .= "<tr>
+			<td>$country</td>
+			<td>$year</td>
+			<td>$area_type</td>
+			<td>$health_type</td>
+			<td>$value %</td>
+		</tr>";
+	}
 }
 ?>
 
