@@ -16,8 +16,8 @@
 		<script src="maps/jquery-jvectormap-world-mill-en.js"></script>
 	
 	<script src="amcharts/amcharts/amcharts.js" type="text/javascript"></script>
-<script src="amcharts/amcharts/xy.js" type="text/javascript"></script>
-	
+	<script src="amcharts/amcharts/xy.js" type="text/javascript"></script>
+	<script src="amcharts/amcharts/serial.js" type="text/javascript"></script>
 	
 	  <script>
 	  
@@ -144,7 +144,7 @@
 					</div>
 					<div id="dropdown1" class="tab-pane fade">
 						
-						<?php //include('pie.php'); ?>
+						<?php include('pie.php'); ?>
 						
 					</div>
 	

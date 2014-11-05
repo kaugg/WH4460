@@ -2,14 +2,6 @@
 
 <h3>Comparisons Pie Chart</h3>
 
-<script src="libs/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-
-
-        <link rel="stylesheet" href="style.css" type="text/css">
-        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
-        <script src="../amcharts/serial.js" type="text/javascript"></script>
-		
         <script type="text/javascript">
             var chart;
 
@@ -97,10 +89,10 @@
                 chart.creditsPosition = "top-right";
 
                 // WRITE
-                chart.write("chartdiv");
+                chart.write("chartdiv2");
             });
         </script>
 
-        <div id="chartdiv" style="width:500px; height:600px;"></div>
+        <div id="chartdiv2" style="width:600px; height:600px;"></div>
 
 			
