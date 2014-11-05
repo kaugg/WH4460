@@ -15,6 +15,10 @@
 		<script src="maps/jquery-jvectormap-1.1.1.min.js"></script>
 		<script src="maps/jquery-jvectormap-world-mill-en.js"></script>
 	
+	<script src="amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+<script src="amcharts/amcharts/xy.js" type="text/javascript"></script>
+	
+	
 	  <script>
 	  
 	  function go(event,code)
