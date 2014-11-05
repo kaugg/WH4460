@@ -130,7 +130,7 @@
 					</div>
 					<div id="sectionB" class="tab-pane fade">
 					
-						<?php //include('scatter.php'); ?>
+						<?php include('scatter.php'); ?>
 						
 					</div>
 					<div id="sectionD" class="tab-pane fade">
