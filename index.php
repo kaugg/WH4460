@@ -127,9 +127,9 @@
 		<div class="well">
           
 					<div class="btn-group" style="display: inline;">
-					  <button type="button" class="btn btn-default">Rural</button>
-					  <button type="button" class="btn btn-default">Urban</button>
-					  <button type="button" class="btn btn-default">Total</button>
+					  <button type="button" class="btn btn-default" onclick="alert('rural')">Rural</button>
+					  <button type="button" class="btn btn-default" onclick="alert('urban')">Urban</button>
+					  <button type="button" class="btn btn-default" onclick="alert('total')">Total</button>
 					</div>
 
             </div>
