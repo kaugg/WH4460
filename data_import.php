@@ -1,10 +1,9 @@
+<!-- Kemble -- >
 <?php
 
 $csv = array_map('str_getcsv', file('data.csv'));
 
 //print_r($csv);
-
-
 
 $html_data = '';
 $data = array();

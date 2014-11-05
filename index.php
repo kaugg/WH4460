@@ -116,8 +116,46 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
+
         <div class="span6">
+	
+          <div class="well">
+			 <div id="world-map" style="width: 100%; height: 280px"></div>
+		 </div>
+		 
 		
+		<div class="well">
+          
+					<div class="btn-group" style="display: inline;">
+					  <button type="button" class="btn btn-default">Rural</button>
+					  <button type="button" class="btn btn-default">Urban</button>
+					  <button type="button" class="btn btn-default">Total</button>
+					</div>
+
+            </div>
+		
+		 		
+          <div class="well">
+			<h4>Time Slider:</h4>
+			    <input type="range" name="points" min="0" max="6" style="width: 100%" onChange="alert(this.value)">
+  
+			
+				<div class="span2">1990</div>
+				<div class="span2">1995</div>
+				<div class="span2">2000</div>
+				<div class="span2">2005</div>
+				<div class="span2">2010</div>
+				<div class="span1">2012</div>
+
+  
+		 </div>
+		 
+        </div><!--/span-->
+		
+		<div class="span6">
+		<div class="well">
+			 Welcome to the World Health infoviz.
+		 </div>
 		
 			<div class="bs-example">
 				<ul class="nav nav-tabs">
@@ -129,7 +167,7 @@
 				<div class="tab-content" style="padding-bottom: 30px;">
 					<div id="sectionA" class="tab-pane fade in active">
 
-						<?php //include('line.php'); ?>
+						<?php include('line.php'); ?>
 						
 					</div>
 					<div id="sectionB" class="tab-pane fade">
@@ -166,64 +204,7 @@
 		 </div>
 		 
         </div><!--/span-->
-        <div class="span6">
 		
-		
-		   <div class="row-fluid">
-            <div class="well">
-            
-			<div class="btn-group" data-toggle="buttons">
-			  <label class="btn btn-primary active">
-				<input type="radio" name="options" id="option1" checked> Rural
-			  </label>
-			  <label class="btn btn-primary">
-				<input type="radio" name="options" id="option2"> Urban
-			  </label>
-			  <label class="btn btn-primary">
-				<input type="radio" name="options" id="option3"> Both
-			  </label>
-			</div>
-			
-			<div class="dropdown">
-			  <a data-toggle="dropdown" href="#">View Year</a>
-			  <ul class="dropdown-menu" role="menu" class="list-group">
-				<li  class="list-group-item">1990</li>
-				<li class="list-group-item">1995</li>
-				<li class="list-group-item">2000</li>
-				<li class="list-group-item">2005</li>
-				<li class="list-group-item">2010</li>
-				<li class="list-group-item">2012</li>
-			  </ul>
-			</div>
-			
-            </div>
-          </div><!--/row-->
-		
-		
-          <div class="well">
-			<h3>World Map:</h3>
-			 <div id="world-map" style="width: 100%; height: 400px"></div>
-		      
-		 </div>
-		 
-		 
-		 		
-          <div class="well">
-			<h4>Time Slider:</h4>
-			    <input type="range" name="points" min="0" max="6" style="width: 100%" onChange="alert(this.value)">
-  
-			
-				<div class="span2">1990</div>
-				<div class="span2">1995</div>
-				<div class="span2">2000</div>
-				<div class="span2">2005</div>
-				<div class="span2">2010</div>
-				<div class="span1">2012</div>
-
-  
-		 </div>
-		 
-        </div><!--/span-->
       </div><!--/row-->
 
       <hr>
