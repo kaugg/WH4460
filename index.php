@@ -19,6 +19,8 @@
 	<script src="amcharts/amcharts/xy.js" type="text/javascript"></script>
 	<script src="amcharts/amcharts/serial.js" type="text/javascript"></script>
 	
+	<script src="main.js" type="text/javascript"></script>
+	
 	  <script>
 	  
 	  function go(event,code)
@@ -156,7 +158,7 @@
 		<div class="well">
 			 Welcome to the World Health infoviz. Filter results using the dropdowns below:<br>
 			 
-			 <select>
+			 <select onChange="on_filter_change()" id="input_year">
 			    <option>Year:</option>
 				<option>1990</option>
 				<option>1995</option>
@@ -165,20 +167,20 @@
 				<option>2010</option>
 			 </select>
 			 
-			 <select>
+			 <select  onChange="on_filter_change()"  id="input_area_type">
 			    <option>Area Type:</option>
 				<option>Total</option>
 				<option>Urban</option>
 				<option>Rural</option>
 			 </select>
 			 
-			  <select>
+			  <select  onChange="on_filter_change()"  id="input_health_type">
 				<option>Health Type:</option>
 				<option>Water</option>
 				<option>Sanitation</option>
 			 </select>
 			 
-			 <select>
+			 <select  onChange="on_filter_change()"  id="input_population_portion">
 				<option>Population Portion:*</option>
 				<option>0-25%</option>
 				<option>25-50%</option>
@@ -186,7 +188,7 @@
 				<option>75-100%</option>
 			 </select>
 			 
-			  <select>
+			  <select  onChange="on_filter_change()"  id="input_country">
 				<option>Country:</option>
 				
 			 </select>
