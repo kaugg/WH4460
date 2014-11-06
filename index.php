@@ -20,12 +20,14 @@
 	<script src="amcharts/amcharts/serial.js" type="text/javascript"></script>
 	
 	<script src="main.js" type="text/javascript"></script>
+		<script src="cn/index.js" type="text/javascript"></script>
+	
 	
 	  <script>
 	  
 	  function go(event,code)
 	  {
-		alert(code);
+		alert( getCountryName(code) );
 	  }
 	  
 	  
