@@ -8,13 +8,21 @@ function on_filter_change()
 	var population_portion 	= $('#input_population_portion').val();
 	var country            	= $('#input_country').val();
 	
+
+	var data = {};
+    data.year = year;
+	data.area_type = area_type;
+	data.health_type = health_type;
+
 	
-	alert(year);
-	alert(area_type);
-	alert(health_type);
-	alert(population_portion);
-	alert(country);
+	var success = null;
 	
+	$data_all = $.ajax({
+	  dataType: "json",
+	  url: 'data_json.php',
+	  data: data,
+	  success: success
+	});
 	
 	
 }

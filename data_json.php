@@ -1,5 +1,6 @@
-<!-- Kemble -->
 <?php
+
+header('Content-Type: application/json');
 
 $csv = array_map('str_getcsv', file('data.csv'));
 
@@ -53,11 +54,11 @@ for($i=1; $i < count($csv); $i++)
 	
 	if( $health_type == "WHS5_158")
 	{
-		$health_type = 'SANITATION';
+		$health_type = 'Sanitation';
 	}
 	else
 	{
-		$health_type = 'WATER';
+		$health_type = 'Water';
 	}
 	
 	// THIS FILTERS THE DATA IN THE TABLE
