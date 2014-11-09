@@ -17,17 +17,64 @@ function on_filter_change()
 	
 	var success = null;
 	
-	$data_all = $.ajax({
-	  dataType: "json",
-	  url: 'data_json.php',
-	  data: data,
-	  success: success
-	});
-	
+	get_data(); // get_all data in json format
 	
 }
 
-
+function get_data()
+{
+	var url = "data_json.php";
+	var map = {};
+	jQuery.getJSON( url, map, receive_get_data );
+	
+	function receive_get_data(doc,text_status)
+	{ /*
+		$('#projects_table').empty();
+	
+		for(i=0; i<doc.length; i++)
+		{
+			var project = doc[i];
+		
+			var tr = document.createElement('tr');
+			
+			var th_name 			= document.createElement('td');
+			var th_project_id 		= document.createElement('td');
+			var th_etsy_username 	= document.createElement('td');
+			var th_email_address 	= document.createElement('td');
+			var th_actions 			= document.createElement('td');
+			
+			var project_link 			= document.createElement('a');
+			project_link.href = 'view_project.php?project='+project.project;
+			project_link.appendChild( document.createTextNode( project.name  ));
+			
+			var edit_link 			= document.createElement('a');
+			edit_link.href = 'view_project.php?project='+project.project;
+			edit_link.appendChild( document.createTextNode('Edit'));
+			
+			var delete_link 			= document.createElement('a');
+			delete_link.href = 'javascript: delete_project('+project.project+')';
+			delete_link.appendChild( document.createTextNode('Delete'));
+			delete_link.className = 'delete_link';
+			
+			th_name.appendChild(  document.createTextNode( project.project ) );
+			th_project_id.appendChild( project_link  );
+			th_etsy_username.appendChild( document.createTextNode( project.description ) );
+			th_email_address.appendChild( document.createTextNode( project.created ) );
+			
+			th_actions.appendChild( edit_link );
+			th_actions.appendChild( document.createTextNode('  -') );
+			th_actions.appendChild( delete_link );
+			
+			$(tr).append(th_name);
+			$(tr).append(th_project_id);
+			$(tr).append(th_etsy_username);
+			$(tr).append(th_email_address);
+			$(tr).append(th_actions);
+			
+			$('#projects_table').append(tr);
+			*/
+		}
+}
 
 
 var isoCountries = {
