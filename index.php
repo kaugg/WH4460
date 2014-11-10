@@ -37,7 +37,7 @@
 						onRegionClick : go,
 						regionStyle : {
 											initial : {fill:"#a0a0a0"}
-										},
+										}/*,
 										markers: [
       {latLng: [41.90, 12.45], name: 'Vatican City'},
       {latLng: [43.73, 7.41], name: 'Monaco'},
@@ -65,10 +65,12 @@
       {latLng: [-20.2, 57.5], name: 'Mauritius'},
       {latLng: [26.02, 50.55], name: 'Bahrain'},
       {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
-    ]
+    ]*/
 				  
 				  });
 				});
+				
+				
 		</script>
 	
 <!--Victoria-->
@@ -179,14 +181,14 @@
 				<option>Sanitation</option>
 			 </select>
 			 
-			 <select  onChange="on_filter_change()"  id="input_population_portion">
+			 <select  onChange="on_filter_change()"  id="input_population_portion" disabled="disabled">
 				<option>0-25%</option>
 				<option>25-50%</option>
 				<option>50-75%</option>
 				<option>75-100%</option>
 			 </select>
 			 
-			  <select  onChange="on_filter_change()"  id="input_country">
+			  <select  onChange="on_filter_change()"  id="input_country" disabled="disabled">
 				<option>Country:</option>
 				
 			 </select>
@@ -195,13 +197,13 @@
 		
 			<div class="bs-example">
 				<ul class="nav nav-tabs">
-					<li class="active"><a data-toggle="tab" href="#sectionA">Line Graph</a></li>
+					<li><a data-toggle="tab" href="#sectionA">Line Graph</a></li>
 					<li><a data-toggle="tab" href="#sectionB">Scatterplot</a></li>
 					<li><a data-toggle="tab" href="#dropdown1">Pie Chart</a></li>
-					<li><a data-toggle="tab" href="#sectionD">Raw Data</a></li>
+					<li  class="active"><a data-toggle="tab" href="#sectionD">Raw Data</a></li>
 				</ul>
 				<div class="tab-content" style="padding-bottom: 30px;">
-					<div id="sectionA" class="tab-pane fade in active">
+					<div id="sectionA" class="tab-pane fade">
 
 						<?php include('line.php'); ?>
 						
@@ -211,7 +213,7 @@
 						<?php include('scatter.php'); ?>
 						
 					</div>
-					<div id="sectionD" class="tab-pane fade">
+					<div id="sectionD" class="tab-pane fade in active">
 					
 						<?php include('raw.php'); ?>
 					

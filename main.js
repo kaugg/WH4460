@@ -103,7 +103,7 @@ function get_data()
 			
 		}
 
-			dummy_function();	
+			//dummy_function();	
 		}
 
 

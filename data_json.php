@@ -41,6 +41,7 @@ if( isset($_REQUEST['max_value']) )
 	$f_max_value = $_REQUEST['max_value'];
 }
 
+$count = 0;
 
 for($i=1; $i < count($csv); $i++)
 {
@@ -71,14 +72,16 @@ for($i=1; $i < count($csv); $i++)
 			( $f_max_value > $value )
 		)
 	{
-		$data[$i] = array();
+		$data[$count] = array();
 	
 		// Record list model
-		$data[$i]['country'] 		= $country;
-		$data[$i]['area_type'] 		= $area_type;
-		$data[$i]['year'] 			= $year;
-		$data[$i]['health_type'] 	= $health_type;
-		$data[$i]['value'] 			= $value;
+		$data[$count]['country'] 		= $country;
+		$data[$count]['area_type'] 		= $area_type;
+		$data[$count]['year'] 			= $year;
+		$data[$count]['health_type'] 	= $health_type;
+		$data[$count]['value'] 			= $value;
+		
+		$count++;
 	}
 }
 
