@@ -1,18 +1,8 @@
-
+var global_data;
 
 function on_filter_change()
 {
-	var year 				= $('#input_year').val();
-	var area_type 			= $('#input_area_type').val();
-	var health_type 		= $('#input_health_type').val();
-	var population_portion 	= $('#input_population_portion').val();
-	var country            	= $('#input_country').val();
-	
 
-	var data = {};
-    data.year = year;
-	data.area_type = area_type;
-	data.health_type = health_type;
 
 	
 	var success = null;
@@ -21,20 +11,50 @@ function on_filter_change()
 	
 }
 
+function dummy_function()
+{
+		for(i=0; i<global_data.length; i++)
+		{
+			var data_item = global_data[i];
+
+			alert(data_item.country);
+			alert(data_item.year);
+			alert(data_item.area_type);
+			alert(data_item.health_type);
+			alert(data_item.value);
+		}
+}
+
 function get_data()
 {
+	var year 				= $('#input_year').val();
+	var area_type 			= $('#input_area_type').val();
+	var health_type 		= $('#input_health_type').val();
+	var population_portion 	= $('#input_population_portion').val();
+	var country            	= $('#input_country').val();
+
+
 	var url = "data_json.php";
 	var map = {};
+	
+	map.year 			= year;
+	map.area_type 		= area_type;
+	map.health_type 	= health_type;
+	
 	jQuery.getJSON( url, map, receive_get_data );
 	
 	function receive_get_data(doc,text_status)
-	{ /*
-		$('#projects_table').empty();
+	{ 
+		global_data = doc;
+		
+		
+		$('#raw_data').empty();
+
 	
 		for(i=0; i<doc.length; i++)
 		{
 			var project = doc[i];
-		
+
 			var tr = document.createElement('tr');
 			
 			var th_name 			= document.createElement('td');
@@ -42,7 +62,7 @@ function get_data()
 			var th_etsy_username 	= document.createElement('td');
 			var th_email_address 	= document.createElement('td');
 			var th_actions 			= document.createElement('td');
-			
+			/*
 			var project_link 			= document.createElement('a');
 			project_link.href = 'view_project.php?project='+project.project;
 			project_link.appendChild( document.createTextNode( project.name  ));
@@ -64,6 +84,14 @@ function get_data()
 			th_actions.appendChild( edit_link );
 			th_actions.appendChild( document.createTextNode('  -') );
 			th_actions.appendChild( delete_link );
+			*/
+			
+			th_name.appendChild( document.createTextNode( project.country  ));
+		     th_project_id.appendChild( document.createTextNode( project.year  ));
+		 th_etsy_username.appendChild( document.createTextNode( project.area_type  ));
+		  th_email_address.appendChild( document.createTextNode( project.health_type  ));
+			th_actions.appendChild( document.createTextNode( project.value  ));
+			
 			
 			$(tr).append(th_name);
 			$(tr).append(th_project_id);
@@ -71,9 +99,14 @@ function get_data()
 			$(tr).append(th_email_address);
 			$(tr).append(th_actions);
 			
-			$('#projects_table').append(tr);
-			*/
+			$('#raw_data').append(tr);
+			
 		}
+
+			dummy_function();	
+		}
+
+
 }
 
 
