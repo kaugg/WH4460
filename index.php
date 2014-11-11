@@ -199,7 +199,7 @@
 				<ul class="nav nav-tabs">
 					<li><a data-toggle="tab" href="#sectionA">Line Graph</a></li>
 					<li><a data-toggle="tab" href="#sectionB">Scatterplot</a></li>
-					<li><a data-toggle="tab" href="#dropdown1">Pie Chart</a></li>
+					<li><a data-toggle="tab" href="#dropdown1">Bar Graph</a></li>
 					<li  class="active"><a data-toggle="tab" href="#sectionD">Raw Data</a></li>
 				</ul>
 				<div class="tab-content" style="padding-bottom: 30px;">
