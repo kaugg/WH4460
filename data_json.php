@@ -1,5 +1,7 @@
 <?php
 
+include('codes_import.php');
+
 header('Content-Type: application/json');
 
 $csv = array_map('str_getcsv', file('data.csv'));
@@ -8,6 +10,7 @@ $data = array();
 
 // FILTERS: only one filter at a time for now
 $f_country		= null;		// ... 
+$f_country_code	= null;
 $f_year			= null;		// 1990, 1995, 2000, 2005, 2010
 $f_area_type	= null;		// Total, Rural, Urban
 $f_health_type 	= null; 	// SANITATION, WATER
@@ -19,6 +22,10 @@ $f_max_value = 101;  // default 101
 if( isset($_REQUEST['country']) )
 {
 	$f_country = $_REQUEST['country'];
+}
+if( isset($_REQUEST['country_code']) )
+{
+	$f_country_code = $_REQUEST['country_code'];
 }
 if( isset($_REQUEST['year']) )
 {
@@ -48,6 +55,7 @@ for($i=1; $i < count($csv); $i++)
 	$line = $csv[$i];
 
 	$country			= $line[13];	// name of country
+	$country_code		= $line[12];	// iso 3 letter code
 	$area_type  		= $line[16]; // type will be either RURAL, URBAN, or TOTAL
 	$year  				= $line[6]; // year will be 1990, 1995, 2000, 2005, 2010
 	$health_type  		= $line[0]; // health type will be WATER or SANITATION
@@ -76,6 +84,7 @@ for($i=1; $i < count($csv); $i++)
 	
 		// Record list model
 		$data[$count]['country'] 		= $country;
+		$data[$count]['country_code'] 	= $codes_array[ $country_code ]; // turn 3 letter ISO abbreviation into two letter abbrv
 		$data[$count]['area_type'] 		= $area_type;
 		$data[$count]['year'] 			= $year;
 		$data[$count]['health_type'] 	= $health_type;
