@@ -35,7 +35,7 @@ function get_data()
 
 	var time_slider		 = 5 * $('#ts').val() + 1990;
 	
-	$('#input_year').val( time_slider );
+	//$('#input_year').val( time_slider );
 
 	var url = "data_json.php";
 	var map = {};
