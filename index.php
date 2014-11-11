@@ -100,9 +100,20 @@
 
         <div class="span6">
 	
+	
+	
           <div class="well">
 			 <div id="world-map" style="width: 100%; height: 280px"></div>
 		 </div>
+		 
+		 
+		 <div class="well">
+     
+			 <h4>Legend:</h4>
+				<p>Scroll around the map and select the countries you're interested in.  Use the time slider to see changes in world health over time.</p>
+		      
+		 </div>
+		 
 		 
 		<!--
 		<div class="well">
@@ -202,19 +213,8 @@
 				</div>
 			</div>
 		
-		  <div class="well">
-     
-			 <h4>Info for Current Country:</h4>
-		     <p>....</p>
-		      
-		 </div>       	   		
-		
-		 <div class="well">
-     
-			 <h4>Guide to Using this Infoviz:</h4>
-				<p>Scroll around the map and select the countries you're interested in.  Use the time slider to see changes in world health over time.</p>
-		      
-		 </div>
+	   	   		
+	
 		 
         </div><!--/span-->
 		
