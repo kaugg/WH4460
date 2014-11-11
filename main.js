@@ -33,6 +33,9 @@ function get_data()
 	var population_portion 	= $('#input_population_portion').val();
 	var country            	= $('#input_country').val();
 
+	var time_slider		 = 5 * $('#ts').val() + 1990;
+	
+	$('#input_year').val( time_slider );
 
 	var url = "data_json.php";
 	var map = {};
@@ -45,6 +48,9 @@ function get_data()
 	
 	function receive_get_data(doc,text_status)
 	{ 
+		var map_value_data = {};
+	
+	
 		global_data = doc;
 		
 		
@@ -57,11 +63,11 @@ function get_data()
 
 			var tr = document.createElement('tr');
 			
-			var th_name 			= document.createElement('td');
-			var th_project_id 		= document.createElement('td');
-			var th_etsy_username 	= document.createElement('td');
-			var th_email_address 	= document.createElement('td');
-			var th_actions 			= document.createElement('td');
+			var th_name 			= document.createElement('td'); // country
+			var th_project_id 		= document.createElement('td'); // 
+			var th_etsy_username 	= document.createElement('td'); // 
+			var th_email_address 	= document.createElement('td'); // 
+			var th_actions 			= document.createElement('td'); // 
 			/*
 			var project_link 			= document.createElement('a');
 			project_link.href = 'view_project.php?project='+project.project;
@@ -86,11 +92,13 @@ function get_data()
 			th_actions.appendChild( delete_link );
 			*/
 			
-			th_name.appendChild( document.createTextNode( project.country  ));
+			th_name.appendChild( document.createTextNode( project.country + ' (' + project.country_code +')' ));
 		     th_project_id.appendChild( document.createTextNode( project.year  ));
 		 th_etsy_username.appendChild( document.createTextNode( project.area_type  ));
 		  th_email_address.appendChild( document.createTextNode( project.health_type  ));
 			th_actions.appendChild( document.createTextNode( project.value  ));
+			
+			map_value_data[project.country_code] = project.value;
 			
 			
 			$(tr).append(th_name);
@@ -104,6 +112,29 @@ function get_data()
 		}
 
 			//dummy_function();	
+			console.log(map_value_data);
+			
+			// update map
+			
+				$(function(){
+            $('#world-map').empty().vectorMap({
+              map: 'world_mill_en',
+              backgroundColor: 'b1b1b1',
+              series: {
+                regions: [{
+                  values: map_value_data,
+                  scale: ['#808000', '#0071A4'],
+                  normalizeFunction: 'linear'
+                }]
+              },
+              hoverOpacity: 0.7,
+              hoverColor: false,
+			  onRegionTipShow: function(e, el, code){
+								el.html(el.html()+' (% With Clean - '+map_value_data[code]+')');
+								},
+			 onRegionClick : go
+            });
+          });
 		}
 
 
