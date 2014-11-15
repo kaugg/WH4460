@@ -129,9 +129,6 @@ function get_data()
               },
               hoverOpacity: 0.7,
               hoverColor: false,
-			  onRegionTipShow: function(e, el, code){
-								el.html(el.html()+' (% With Clean - '+map_value_data[code]+')');
-								},
 			 onRegionClick : go
             });
           });

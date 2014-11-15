@@ -27,7 +27,7 @@
 	  
 	  function go(event,code)
 	  {
-		alert( c );  //getCountryName(code)
+		alert( code );  //getCountryName(code)
 	  }
 	  
 	  
