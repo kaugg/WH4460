@@ -25,7 +25,7 @@ if( isset($_REQUEST['country']) )
 }
 if( isset($_REQUEST['country_code']) )
 {
-	$f_country_code = $_REQUEST['country_code'];
+	$f_country_code = $two_to_three_iso[ $_REQUEST['country_code'] ]; // convert request two letter code to 3 letter code
 }
 if( isset($_REQUEST['year']) )
 {
@@ -75,7 +75,7 @@ for($i=1; $i < count($csv); $i++)
 			(($year == $f_year) || ($f_year == null)) &&
 			(($area_type == $f_area_type) || ($f_area_type == null)) &&
 			(($health_type == $f_health_type) || ($f_health_type == null))  &&
-			(($country == $f_country) || ($f_country == null))  &&
+			(($country_code == $f_country_code) || ($f_country_code == null)  || ($f_country_code == 0))  &&
 			( $f_min_value < $value ) &&
 			( $f_max_value > $value )
 		)

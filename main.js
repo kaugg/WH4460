@@ -1,5 +1,12 @@
 var global_data;
 
+function start()
+{
+	on_filter_change();
+	get_countries();
+}
+
+
 function on_filter_change()
 {
 
@@ -25,13 +32,14 @@ function dummy_function()
 		}
 }
 
+// This function gets all of the country data and places it on the map
 function get_data()
 {
 	var year 				= $('#input_year').val();
 	var area_type 			= $('#input_area_type').val();
 	var health_type 		= $('#input_health_type').val();
 	var population_portion 	= $('#input_population_portion').val();
-	var country            	= $('#input_country').val();
+	var country            	= $('#input_country').val(); // country code
 
 	var time_slider		 = 5 * $('#ts').val() + 1990;
 	
@@ -43,6 +51,7 @@ function get_data()
 	map.year 			= year;
 	map.area_type 		= area_type;
 	map.health_type 	= health_type;
+	map.country_code     	= country;
 	
 	jQuery.getJSON( url, map, receive_get_data );
 	
@@ -129,7 +138,7 @@ function get_data()
               },
               hoverOpacity: 0.7,
               hoverColor: false,
-			 onRegionClick : go
+			 onRegionClick : updateCountryDropDown
             });
           });
 		}
@@ -137,6 +146,35 @@ function get_data()
 
 }
 
+
+
+// get all countries and populate country dropdown list
+function get_countries()
+{
+	var map = {};
+	
+	var url = 'get_codes_array.php';
+
+	jQuery.getJSON( url, map, receive_get_codes );
+	
+	function receive_get_codes(doc, status)
+	{
+	
+		for( i=0; i<doc.length; i++ )
+		{
+			var countryCode = doc[i];
+		
+			var option = document.createElement('option');
+			option.value = countryCode; // 2 letter iso code
+			option.appendChild( document.createTextNode( getCountryName(countryCode) ));
+		
+			$( '#input_country' ).append( option );
+		}
+	
+	}
+}
+
+// below code used to translate country names from iso code to readable name
 
 var isoCountries = {
     'AF' : 'Afghanistan',

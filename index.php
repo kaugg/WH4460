@@ -25,16 +25,20 @@
 	
 	  <script>
 	  
-	  function go(event,code)
+	  function updateCountryDropDown(event,code)
 	  {
-		alert( code );  //getCountryName(code)
+		var two_letter_iso_code = code;
+		
+		$( '#input_country' ).val( code );  //when clicked, set country drop down to map value
+		
+		on_filter_change(); // call filter change
 	  }
 	  
 	  
 				$(function(){
 				  $('#world-map').vectorMap({
 						backgroundColor : "f1f1f1",
-						onRegionClick : go,
+						onRegionClick : updateCountryDropDown,
 						regionStyle : {
 											initial : {fill:"#a0a0a0"}
 										}
@@ -71,7 +75,7 @@
     </style>
 	
   </head>
-  <body onload="on_filter_change()">
+  <body onload="start()">
   
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -174,8 +178,8 @@
 				<option>75-100%</option>
 			 </select>
 			 
-			  <select  onChange="on_filter_change()"  id="input_country" disabled="disabled">
-				<option>Country:</option>
+			  <select  onChange="on_filter_change()"  id="input_country">
+				<option value='0'>Country:</option>
 				
 			 </select>
 			 
