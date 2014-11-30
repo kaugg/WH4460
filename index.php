@@ -37,18 +37,7 @@
 	  }
 	  
 	  
-				$(function(){
-				  $('#world-map').vectorMap({
-						backgroundColor : "f1f1f1",
-						onRegionClick : updateCountryDropDown,
-						regionStyle : {
-											initial : {fill:"#a0a0a0"}
-										}
-				  
-				  });
-				});
-				
-				
+		
 				
 	
 				

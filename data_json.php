@@ -23,7 +23,7 @@ if( isset($_REQUEST['country']) )
 {
 	$f_country = $_REQUEST['country'];
 }
-if( isset($_REQUEST['country_code']) )
+if( isset($_REQUEST['country_code']) && ($f_country_code != '0') && ($f_country_code != 0) )
 {
 	$f_country_code = $two_to_three_iso[ $_REQUEST['country_code'] ]; // convert request two letter code to 3 letter code
 }
@@ -73,9 +73,10 @@ for($i=1; $i < count($csv); $i++)
 	// THIS FILTERS THE DATA IN THE TABLE
 	if	(
 			(($year == $f_year) || ($f_year == null)) &&
+			(($f_country == 0) || ($f_country == '0') ) &&
 			(($area_type == $f_area_type) || ($f_area_type == null)) &&
 			(($health_type == $f_health_type) || ($f_health_type == null))  &&
-			(($country_code == $f_country_code) || ($f_country_code == null)  || ($f_country_code == 0))  &&
+			(($country_code == $f_country_code) || ($f_country_code == null)  || ($f_country_code == 0) || ($f_country_code == '0'))  &&
 			( $f_min_value < $value ) &&
 			( $f_max_value > $value )
 		)

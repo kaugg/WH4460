@@ -2,20 +2,17 @@ var global_data;
 
 function start()
 {
-	on_filter_change();
 	get_countries();
+		
+		on_filter_change();
 }
 
 
 function on_filter_change()
 {
-
-
-	
 	var success = null;
 	
 	get_data(); // get_all data in json format
-	
 }
 
 function dummy_function()
