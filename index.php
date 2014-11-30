@@ -128,6 +128,7 @@
 			 Welcome to the World Health infoviz. Filter results using the dropdowns below:<br><br>
 			 
 			 <select onChange="on_filter_change()" id="input_year">
+			    <option value="1990">Year:</option>
 				<option>1990</option>
 				<option>1995</option>
 				<option>2000</option>
@@ -136,21 +137,24 @@
 			 </select>
 			 
 			 <select  onChange="on_filter_change()"  id="input_area_type">
+			 	<option value="Total">Area Type</option>
 				<option>Total</option>
 				<option>Urban</option>
 				<option>Rural</option>
 			 </select>
 			 
 			  <select  onChange="on_filter_change()"  id="input_health_type">
+			    <option value="Water">Health Type:</option>
 				<option>Water</option>
 				<option>Sanitation</option>
 			 </select>
 			 
-			 <select  onChange="on_filter_change()"  id="input_population_portion" disabled="disabled">
-				<option>0-25%</option>
-				<option>25-50%</option>
-				<option>50-75%</option>
-				<option>75-100%</option>
+			 <select  onChange="on_filter_change()"  id="input_population_portion">
+			    <option value="0">Quartile:</option>
+				<option value="1">0-25%</option>
+				<option value="2">25-50%</option>
+				<option value="3">50-75%</option>
+				<option value="4">75-100%</option>
 			 </select>
 			 
 			  <select  onChange="on_filter_change()"  id="input_country">
