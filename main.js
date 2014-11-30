@@ -167,8 +167,18 @@ function get_countries()
 			var option = document.createElement('option');
 			option.value = countryCode; // 2 letter iso code
 			option.appendChild( document.createTextNode( getCountryName(countryCode) ));
+			
+			var option1 = document.createElement('option');
+			option1.value = countryCode; // 2 letter iso code
+			option1.appendChild( document.createTextNode( getCountryName(countryCode) ));
+			
+			var option2 = document.createElement('option');
+			option2.value = countryCode; // 2 letter iso code
+			option2.appendChild( document.createTextNode( getCountryName(countryCode) ));
 		
-			$( '#input_country' ).append( option );
+			$( '#input_country' ).append( option ); // append to main filter
+			$( '#input_country_A' ).append( option1 );  // append to comparison filter
+			$( '#input_country_B' ).append( option2 );  // append to comparison
 		}
 	
 	}
@@ -431,3 +441,13 @@ function getCountryName(countryCode) {
         return countryCode;
     }
 }
+
+function comp_init()
+{
+	var country_A = $('#input_country_A').val();
+	var country_B = $('#input_country_B').val();
+
+	alert(country_A);
+	alert(country_B);
+}
+

@@ -1,7 +1,8 @@
 <!--Kemble-->
 
 <h3>Raw Data</h3>
-									
+
+								
 <table class="table" >
 
 <tr>
@@ -11,6 +12,7 @@
 	<th>Health Type</th>
 	<th>% With Clean Water/Sanitation</th>
 </tr>
+
 
 <tbody id="raw_data">
 
