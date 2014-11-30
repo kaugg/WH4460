@@ -19,23 +19,23 @@ $f_min_value = 0;  // default 0
 $f_max_value = 101;  // default 101
 
 
-if( isset($_REQUEST['country']) )
+if( isset($_REQUEST['country']) && (($_REQUEST['country'] != '0') || ($_REQUEST['country'] != 0)) )
 {
 	$f_country = $_REQUEST['country'];
 }
-if( isset($_REQUEST['country_code']) && ($f_country_code != '0') && ($f_country_code != 0) )
+if( isset($_REQUEST['country_code']) && (($_REQUEST['country_code'] != '0') || ($_REQUEST['country_code'] != 0)) )
 {
 	$f_country_code = $two_to_three_iso[ $_REQUEST['country_code'] ]; // convert request two letter code to 3 letter code
 }
-if( isset($_REQUEST['year']) )
+if( isset($_REQUEST['year']) && (($_REQUEST['year'] != '0') || ($_REQUEST['year'] != 0)))
 {
 	$f_year = $_REQUEST['year'];
 }
-if( isset($_REQUEST['area_type']) )
+if( isset($_REQUEST['area_type'])&& (($_REQUEST['area_type'] != '0') || ($_REQUEST['area_type'] != 0)) )
 {
 	$f_area_type = $_REQUEST['area_type'];
 }
-if( isset($_REQUEST['health_type']) )
+if( isset($_REQUEST['health_type']) && (($_REQUEST['health_type'] != '0') || ($_REQUEST['health_type'] != 0)) )
 {
 	$f_health_type = $_REQUEST['health_type'];
 }
@@ -76,7 +76,7 @@ for($i=1; $i < count($csv); $i++)
 			(($f_country == 0) || ($f_country == '0') ) &&
 			(($area_type == $f_area_type) || ($f_area_type == null)) &&
 			(($health_type == $f_health_type) || ($f_health_type == null))  &&
-			(($country_code == $f_country_code) || ($f_country_code == null)  || ($f_country_code == 0) || ($f_country_code == '0'))  &&
+			(($country_code == $f_country_code) || ($f_country_code == null))  &&
 			( $f_min_value < $value ) &&
 			( $f_max_value > $value )
 		)

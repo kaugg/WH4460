@@ -448,3 +448,13 @@ function comp_init()
 	alert(country_B);
 }
 
+function clear_filters() // clear/reset all filter
+{
+	$('#input_country').val(0);
+	$('#input_year').val(0);
+	$('#input_area_type').val(0);
+	$('#input_health_type').val(0);
+	$('#input_population_portion').val(0);
+	on_filter_change();
+	
+}
