@@ -55,7 +55,7 @@ function get_data()
 	function receive_get_data(doc,text_status)
 	{ 
 		var map_value_data = {};
-	
+	    var line_chart_data = [];  // chart9 data
 	
 		global_data = doc;
 		
@@ -98,11 +98,11 @@ function get_data()
 			th_actions.appendChild( delete_link );
 			*/
 			
-			th_name.appendChild( document.createTextNode( project.country + ' (' + project.country_code +')' ));
-		     th_project_id.appendChild( document.createTextNode( project.year  ));
-		 th_etsy_username.appendChild( document.createTextNode( project.area_type  ));
-		  th_email_address.appendChild( document.createTextNode( project.health_type  ));
-			th_actions.appendChild( document.createTextNode( project.value  ));
+			th_name.appendChild( 			document.createTextNode( project.country + ' (' + project.country_code +')' ));
+		    th_project_id.appendChild( 		document.createTextNode( project.year  										));
+		    th_etsy_username.appendChild( 	document.createTextNode( project.area_type 								 	));
+		    th_email_address.appendChild( 	document.createTextNode( project.health_type  								));
+			th_actions.appendChild( 		document.createTextNode( project.value  									));
 			
 			map_value_data[project.country_code] = project.value;
 			
@@ -113,7 +113,12 @@ function get_data()
 			$(tr).append(th_email_address);
 			$(tr).append(th_actions);
 			
-			$('#raw_data').append(tr);
+			$('#raw_data').append(tr); // add data to raw data table
+			
+			//create data object for line graph data
+			line_chart_data[i] = {};
+			line_chart_data[i].date = project.year;
+			line_chart_data[i].visits = project.value;
 			
 		}
 
@@ -138,11 +143,28 @@ function get_data()
 			 onRegionClick : updateCountryDropDown
             });
           });
+		  
+		  // sort line data for line graph
+		  line_chart_data.sort(function(a,b){
+			  // Turn your strings into dates, and then subtract them
+			  // to get a value that is either negative, positive, or zero.
+			  return a.date - b.date;
+			});
+					  
+		
+			if( 	($('#input_country').val() != 0) &&
+					($('#input_area_type').val() != 0) &&
+					($('#input_health_type').val() != 0)
+				)
+			{
+				// update line graph data, only if health type, country, and area type filters are selected
+				chart7.dataProvider = line_chart_data;
+				chart7.validateData(); 
+			}  
+		  
+		  
 		}
-
-
 }
-
 
 
 // get all countries and populate country dropdown list

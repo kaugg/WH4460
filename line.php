@@ -2,30 +2,7 @@
 
 <script type="text/javascript">
 
-var chartData3 = generatechartData();
-
-function generatechartData() {
-    var chartData3 = [];
-    var firstDate = new Date();
-    firstDate.setDate(firstDate.getDate() - 150);
-
-    for (var i = 0; i < 150; i++) {
-        // we create date objects here. In your data, you can have date strings
-        // and then set format of your dates using chart.dataDateFormat property,
-        // however when possible, use date objects, as this will speed up chart rendering.
-        var newDate = new Date(firstDate);
-        newDate.setDate(newDate.getDate() + i);
-
-        var visits = Math.round(Math.random() * 100 - 50);
-
-        chartData3.push({
-            date: newDate,
-            visits: visits
-        });
-    }
-    return chartData3;
-}
-
+var chartData3 = [];
 
 var chart7 = AmCharts.makeChart("chartdiv3", {
     "theme": "none",	
@@ -62,7 +39,7 @@ var chart7 = AmCharts.makeChart("chartdiv3", {
     },
     "categoryField": "date",
     "categoryAxis": {
-        "parseDates": true,
+        "parseDates": false,
         "axisAlpha": 0,
         "minHorizontalGap":60
     }
