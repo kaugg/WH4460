@@ -1,0 +1,16 @@
+6 minute 4460 video outline
+
+1. Describe Purpose of Infoviz 				(50s)
+2. Show Map, Legend, Filters, Tool Tabs, Help Dialog  	(30s)
+3. Show global gradient, explain  			(30s)
+4. Show how tabs disable based on filter criteria   	(10s)
+5. Show raw data tab  					(30s)
+6. Show two country comparison tab  			(30s)
+7. Show water vs septic progress tab  			(30s)
+8. Show Country Progress  				(30s)
+9. 	Interesting Example 1: (raw) + comparison   	(30s)
+10.	Interesting Example 2: water vs septic  	(30s)
+11.	Interesting Example 3: country progress 	(30s)
+12. 	Interesting Example 4: comparison		(30s)
+
+..conclude, jquery, libraries(jvector, AMchart, bootstrap), thanks, end.
