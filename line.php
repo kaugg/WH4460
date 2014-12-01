@@ -55,6 +55,6 @@ function zoomChart(){
 }
 </script>
 
-<h3>Progress of Country: <span id="country_label"></span></h3>
+<h3><span id="type_label"></span></h3>
 
 <div id="chartdiv3" style="height: 300px; width: 600px;"></div>

@@ -83,7 +83,7 @@
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Infoviz</a></li>
-              <li><a href="#about" data-toggle="modal" data-target="#myModal" >Help</a></li>
+              <li><a href="#about" data-toggle="modal" data-target="#myModal" onclick="z_open()" >Help</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -105,15 +105,16 @@
 		 <div class="well">
      
 			 <h4>Legend:</h4>
-				<p>Scroll around the map and select the countries you're interested in.  Use the time slider to see changes in world health over time.</p>
-		      
+			 <div align="center">
+			<img src="legend.png" style="margin: auto;" />
+		      </div>
 		 </div>
 		 
  
         </div><!--/span-->
 		
 		<div class="span6">
-		<div class="well">
+		<div class="well" style="z-index: 9999999;">
 			 Welcome to the World Health infoviz. Filter results using the dropdowns below:<br><br>
 			 
 			 <select onChange="on_filter_change()" id="input_year">
@@ -156,8 +157,8 @@
 		
 			<div class="bs-example">
 				<ul class="nav nav-tabs">
-					<li><a data-toggle="tab" href="#sectionA">Country Progress</a></li>
-					<li><a data-toggle="tab" href="#sectionB">Water vs. Septic Progress</a></li>
+					<li class="disabled" id="li_country_prog"><a data-toggle="tab" href="#sectionA">Country Progress</a></li>
+					<li class="disabled" id="li_water_prog"><a data-toggle="tab" href="#sectionB">Water vs. Septic Progress</a></li>
 					<li><a data-toggle="tab" href="#dropdown1">Compare Countries</a></li>
 					<li  class="active"><a data-toggle="tab" href="#sectionD">Raw Data</a></li>
 				</ul>
@@ -204,7 +205,7 @@
     </div><!--/.fluid-container-->
   
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" style="z-index: -1;" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -213,13 +214,15 @@
       </div>
       <div class="modal-body">
       
+	  <h3>Filter Help:</h3>
 	  
 	  <ul class="list-group">
-	  <li class="list-group-item">Cras justo odio</li>
-	  <li class="list-group-item">Dapibus ac facilisis in</li>
-	  <li class="list-group-item">Morbi leo risus</li>
-	  <li class="list-group-item">Porta ac consectetur ac</li>
-	  <li class="list-group-item">Vestibulum at eros</li>
+	  <li class="list-group-item"><b>Year:</b> Select the year you're interested in for water and sanitation data.</li>
+	  <li class="list-group-item"><b>Area Type:</b> Rural denotes rural spaces in a country, and urban denotes cities. Total is both combined and averaged.</li>
+	  <li class="list-group-item"><b>Health type:</b> Water denotes cleanliness of water facilities, and sanitation denotes septic systems, sinks, etc.</li>
+	  <li class="list-group-item"><b>Quartile:</b> You can select the lower and upper quartiles of the countries based on cleanliness.</li>
+	  <li class="list-group-item"><b>Country:</b> Select a single country you want to inspect further.</li>
+	  <li class="list-group-item"><b>X:</b> Clear all filters to reset to a global view.</li>
 	</ul>
 	  
       </div>

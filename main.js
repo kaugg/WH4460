@@ -106,7 +106,7 @@ function get_data()
 		    th_project_id.appendChild( 		document.createTextNode( project.year  										));
 		    th_etsy_username.appendChild( 	document.createTextNode( project.area_type 								 	));
 		    th_email_address.appendChild( 	document.createTextNode( project.health_type  								));
-			th_actions.appendChild( 		document.createTextNode( project.value  									));
+			th_actions.appendChild( 		document.createTextNode( project.value + '%' 									));
 			
 			map_value_data[project.country_code] = project.value;
 			
@@ -181,15 +181,24 @@ function get_data()
 				// update line graph data, only if health type, country, and area type filters are selected
 				chart7.dataProvider = line_chart_data;
 				chart7.validateData(); 
+				$('#li_country_prog').removeClass('disabled');
 			}  
 		  
+			// update scatter plot title
+		    $('#country_name_ws').empty().text(  $('#input_country option:selected').text()+'\'s '+$('#input_area_type').val() +' ' );
 		  
+			// update "Water" "Sanitation" label on title
+			$('#type_label').empty().text( $('#input_country option:selected').text() + '\'s ' + $('#input_health_type').val() + ' progress in an ' + $('#input_area_type').val() + ' context. ' );
 		  
-		  
-		  
+			if( 	($('#input_country').val() != 0) &&
+					($('#input_area_type').val() != 0)
+				)
+			{
 				// update scatter data
 				chart.dataProvider = scatter_chart_data;
 				chart.validateData(); 
+				$('#li_water_prog').removeClass('disabled');
+			}
 		}
 }
 
@@ -506,4 +515,12 @@ function clear_filters() // clear/reset all filter
 	$('#input_population_portion').val(0);
 	on_filter_change();
 	
+}
+
+function z_open()
+{
+	$('#myModal').css({
+		zIndex: 100000000,
+		
+	});
 }

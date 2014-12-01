@@ -105,7 +105,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 	
 </script>
 
-<h3>Water vs. Septic Progress</h3>
+<h3><span id="country_name_ws"></span>Water vs. Septic Progress</h3>
 
 <div id="chartdiv" style="height: 300px; width: 600px;"></div>
 
