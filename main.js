@@ -57,6 +57,16 @@ function get_data()
 		var map_value_data = {};
 	    var line_chart_data = [];  // chart9 data
 		var scatter_chart_data = [];  // chart data
+		var barData = [];  // data for comparison bar chart
+	
+			// default dummy data
+			barData[0] = {"year":'1990', "cA":0, "cB":0};
+			barData[1] = {"year":'1995', "cA":0, "cB":0};
+			barData[2] = {"year":'2000', "cA":0, "cB":0};
+			barData[3] = {"year":'2005', "cA":0, "cB":0};
+			barData[4] = {"year":'2010', "cA":0, "cB":0};
+			barData[5] = {"year":'2012', "cA":0, "cB":0};
+	
 	
 		var ai = 0;
 		var bi = 0;
@@ -141,6 +151,76 @@ function get_data()
 				scatter_chart_data[bi].by = project.value;  // country value for septic (sanitation)
 				bi++;
 			}
+			
+			// filter out data for bar chart for country comparisons, store in barData array
+			var cA = $('#input_country_A').val();
+			var cB = $('#input_country_B').val();
+			var current_country = project.country_code; // country for this current loop i line
+			var c_year = project.year; // current year in loop item i
+			
+			
+			
+	
+			
+			if( (cA == current_country) || (cB == current_country) )
+			{
+				
+				if(cA == current_country)
+				{
+					
+					if( c_year == '1990' )
+					{
+						barData[0]["cA"] = project.value;
+					}
+					else if( c_year == '1995' )
+					{
+						barData[1]["cA"] = project.value;
+					}
+					else if( c_year == '2000' )
+					{
+						barData[2]["cA"] = project.value;
+					}
+					else if( c_year == '2005' )
+					{
+						barData[3]["cA"] = project.value;
+					}
+					else if( c_year == '2010' )
+					{
+						barData[4]["cA"] = project.value;
+					}
+					else if( c_year == '2012' )
+					{
+						barData[5]["cA"] = project.value;
+					}
+				}
+				else if(cB == current_country)
+				{
+					if( c_year == '1990' )
+					{
+						barData[0]["cB"] = project.value;
+					}
+					else if( c_year == '1995' )
+					{
+						barData[1]["cB"] = project.value;
+					}
+					else if( c_year == '2000' )
+					{
+						barData[2]["cB"] = project.value;
+					}
+					else if( c_year == '2005' )
+					{
+						barData[3]["cB"] = project.value;
+					}
+					else if( c_year == '2010' )
+					{
+						barData[4]["cB"] = project.value;
+					}
+					else if( c_year == '2012' )
+					{
+						barData[5]["cB"] = project.value;
+					}
+				}
+			}
 		}
 
 			//dummy_function();	
@@ -199,6 +279,12 @@ function get_data()
 				chart.validateData(); 
 				$('#li_water_prog').removeClass('disabled');
 			}
+			
+			//--------------------------------------------------------------
+			//  Update data for country comparisons bar chart
+			chart9.dataProvider = barData;
+			chart9.validateData(); 
+			
 		}
 }
 
@@ -502,8 +588,7 @@ function comp_init()
 	var country_A = $('#input_country_A').val();
 	var country_B = $('#input_country_B').val();
 
-	alert(country_A);
-	alert(country_B);
+	on_filter_change();
 }
 
 function clear_filters() // clear/reset all filter

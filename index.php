@@ -124,6 +124,7 @@
 				<option>2000</option>
 				<option>2005</option>
 				<option>2010</option>
+				<option>2012</option>
 			 </select>
 			 
 			 <select  onChange="on_filter_change()"  id="input_area_type">
