@@ -56,6 +56,10 @@ function get_data()
 	{ 
 		var map_value_data = {};
 	    var line_chart_data = [];  // chart9 data
+		var scatter_chart_data = [];  // chart data
+	
+		var ai = 0;
+		var bi = 0;
 	
 		global_data = doc;
 		
@@ -120,6 +124,23 @@ function get_data()
 			line_chart_data[i].date = project.year;
 			line_chart_data[i].visits = project.value;
 			
+			
+			//create data object for scatter graph data
+			scatter_chart_data[i] = {};
+			
+			if( project.health_type == 'Water' )
+			{
+				scatter_chart_data[ai].ax = project.year;	// country year for water
+				scatter_chart_data[ai].ay = project.value;	// country value for water
+				ai++;
+			}
+			
+			if(project.health_type == 'Sanitation')
+			{
+				scatter_chart_data[bi].bx = project.year;  // country year for septic
+				scatter_chart_data[bi].by = project.value;  // country value for septic (sanitation)
+				bi++;
+			}
 		}
 
 			//dummy_function();	
@@ -163,6 +184,12 @@ function get_data()
 			}  
 		  
 		  
+		  
+		  
+		  
+				// update scatter data
+				chart.dataProvider = scatter_chart_data;
+				chart.validateData(); 
 		}
 }
 

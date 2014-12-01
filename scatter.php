@@ -5,72 +5,102 @@
 var chart = AmCharts.makeChart("chartdiv", {
     "type": "xy",
     "theme": "none",
-    "pathToImages": "/wp-content/themes/amcharts/static/amcharts/images/",
+    "pathToImages": "http://www.amcharts.com/lib/3/images/",
     "dataProvider": [{
-        "x": 10,
-        "y": 14,
-        "errorX": 3,
-        "errorY": 4
+        "ax": 1,
+        "ay": 0.5,
+        "bx": 1,
+        "by": 2.2
     }, {
-        "x": 5,
-        "y": 3,
-        "errorX": 1.52,
-        "errorY": 6.8
+        "ax": 2,
+        "ay": 1.3,
+        "bx": 2,
+        "by": 4.9
     }, {
-        "x": -10,
-        "y": 3,
-        "errorX": 0.8,
-        "errorY": 3.5
+        "ax": 3,
+        "ay": 2.3,
+        "bx": 3,
+        "by": 5.1
     }, {
-        "x": -6,
-        "y": 5,
-        "errorX": 1.2,
-        "errorY": 4.2
+        "ax": 4,
+        "ay": 2.8,
+        "bx": 4,
+        "by": 5.3
     }, {
-        "x": 11,
-        "y": -4,
-        "errorX": 2.4,
-        "errorY": 3.9
+        "ax": 5,
+        "ay": 3.5,
+        "bx": 5,
+        "by": 6.1
     }, {
-        "x": 13,
-        "y": 1,
-        "errorX": 1.5,
-        "errorY": 3.3
+        "ax": 6,
+        "ay": 5.1,
+        "bx": 6,
+        "by": 8.3
     }, {
-        "x": 1,
-        "y": 6,
-        "errorX": 2,
-        "errorY": 3.3
+        "ax": 7,
+        "ay": 6.7,
+        "bx": 7,
+        "by": 10.5
+    }, {
+        "ax": 8,
+        "ay": 8,
+        "bx": 8,
+        "by": 12.3
+    }, {
+        "ax": 9,
+        "ay": 8.9,
+        "bx": 9,
+        "by": 14.5
+    }, {
+        "ax": 10,
+        "ay": 9.7,
+        "bx": 10,
+        "by": 15
+    }, {
+        "ax": 11,
+        "ay": 10.4,
+        "bx": 11,
+        "by": 18.8
+    }, {
+        "ax": 12,
+        "ay": 11.7,
+        "bx": 12,
+        "by": 19
     }],
     "valueAxes": [{
-        "title": "X Axis",
         "position":"bottom",
-        "id":"x1"
+        "axisAlpha": 0,
+        "dashLength": 1,
+        "title": "Year (5 year increments starting at 1990)"
     }, {
-        "minMaxMultiplier": 1.2,
+        "axisAlpha": 0,
+        "dashLength": 1,
         "position": "left",
-        "id":"y1",
-        "title": "Y Axis"
+        "title": "% of people with clean resources"
     }],
+    "startDuration": 1,
     "graphs": [{
-        "balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b><br>x error:<b>[[errorX]]</b><br>y error:<b>[[errorY]]</b>",
-        "bullet": "xError",
-        "bulletAxis": "x1",
-        "errorField": "errorX",
+        "balloonText": "Year:[[x]] % Water Clean:[[y]]",
+        "bullet": "triangleUp",
         "lineAlpha": 0,
-        "xField": "x",
-        "yField": "y",
+        "xField": "ax",
+        "yField": "ay",
+        "lineColor": "#7DCFF0",
 		"fillAlphas": 0
     }, {
-        "balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b><br>x error:<b>[[errorX]]</b><br>y error:<b>[[errorY]]</b>",
-        "bullet": "yError",
-        "bulletAxis": "y1",
-        "errorField": "errorY",
+        "balloonText": "Year:[[x]] % Septic Clean:[[y]]",
+        "bullet": "triangleUp",
         "lineAlpha": 0,
-        "xField": "x",
-        "yField": "y",
+        "xField": "bx",
+        "yField": "by",
+        "lineColor": "#96BD44",
 		"fillAlphas": 0
-    }]
+    }],
+    
+    "marginLeft": 64,
+    "marginBottom": 60,
+    "chartScrollbar": {},
+    "chartCursor": {}
 });
 	
 </script>
