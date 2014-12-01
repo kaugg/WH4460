@@ -31,14 +31,14 @@
     }],
     "startDuration": 1,
     "graphs": [{
-        "balloonText": "GDP grow in [[category]] (Country A): <b>[[value]]</b>",
+        "balloonText": "% of people w/ clean resources [[category]] (Country A): <b>[[value]]</b>",
         "fillAlphas": 0.9,
         "lineAlpha": 0.2,
         "title": "2004",
         "type": "column",
         "valueField": "cA"
     }, {
-        "balloonText": "GDP grow in [[category]] (Country B): <b>[[value]]</b>",
+        "balloonText": "% of people w/ clean resources [[category]] (Country B): <b>[[value]]</b>",
         "fillAlphas": 0.9,
         "lineAlpha": 0.2,
         "title": "2005",

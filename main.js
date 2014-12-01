@@ -282,8 +282,15 @@ function get_data()
 			
 			//--------------------------------------------------------------
 			//  Update data for country comparisons bar chart
-			chart9.dataProvider = barData;
-			chart9.validateData(); 
+			if( 	
+					($('#input_area_type').val() != 0) &&
+					($('#input_health_type').val() != 0)
+				)
+			{
+				chart9.dataProvider = barData;
+				chart9.validateData(); 
+				$('#li_comp').removeClass('disabled');
+			}
 			
 		}
 }

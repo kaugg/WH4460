@@ -160,7 +160,7 @@
 				<ul class="nav nav-tabs">
 					<li class="disabled" id="li_country_prog"><a data-toggle="tab" href="#sectionA">Country Progress</a></li>
 					<li class="disabled" id="li_water_prog"><a data-toggle="tab" href="#sectionB">Water vs. Septic Progress</a></li>
-					<li><a data-toggle="tab" href="#dropdown1">Compare Countries</a></li>
+					<li class="disabled" id="li_comp"><a data-toggle="tab" href="#dropdown1">Compare Countries</a></li>
 					<li  class="active"><a data-toggle="tab" href="#sectionD">Raw Data</a></li>
 				</ul>
 				<div class="tab-content" style="padding-bottom: 30px;">
